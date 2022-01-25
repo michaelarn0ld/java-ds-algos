@@ -1,4 +1,4 @@
-package michaelarnold.ds_algorithms.arrays;
+package michaelarn0ld.ds_algorithms.arrays;
 
 /**
  * This class implements an ordered array
@@ -37,7 +37,7 @@ public class OrderedArray {
             if (lowerBound > upperBound) {
                 return -1;
             }
-            if(value > a[lowerBound]) {
+            if(value > a[curIdx]) {
                 lowerBound = curIdx + 1;
             } else {
                 upperBound = curIdx - 1;
@@ -45,6 +45,52 @@ public class OrderedArray {
         }
     }
 
+    /**
+     * Uses linear search to find the insertion index, shifts all elements from
+     * this index rightward (inclusive) to the right by one, then inserts the
+     * value at the insertion index.
+     *
+     * @param value - value that we want to insert into the sorted array
+     * */
     public void insert(int value) {
+        int i;
+        for (i = 0; i < nElems; i++) {
+            if (a[i] > value) break;
+        }
+        for (int j = nElems; j > i; j--) {
+            a[j] = a[j - 1];
+        }
+        a[i] = value;
+        nElems++;
+    }
+
+    /**
+     * Finds the index of the element if it exists and then shifts all elements
+     * from that index rightward (inclusive) to the left by one.
+     *
+     * @param value - value that we want to remove from the array
+     * @return - true if delete success else false if value is not in the array
+     * */
+    public boolean delete(int value) {
+        int i = find(value);
+        if (i != -1) {
+            for (int j = i; j < nElems; j++) {
+                a[j] = a[j + 1];
+            }
+            nElems--;
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * Displays the sorted array
+     * */
+    public void display() {
+        System.out.print("[ ");
+        for (int i = 0; i < nElems; i++) {
+            System.out.print(a[i] + " ");
+        }
+        System.out.print("]\n");
     }
 }
