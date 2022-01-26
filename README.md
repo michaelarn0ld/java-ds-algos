@@ -1,11 +1,11 @@
 # Data Structures and Algorithms in Java
-This project is dedicated to data structures and algorithms as they relate to
-software engineering. In additon to source code, comparisons between the
-costs and benefits of each approach are documented. This is an open-knowledge
-project.
+This project is dedicated to the study of data structures and algorithms as they
+relate to software engineering. In additon to source code, comparisons between
+the costs and benefits of each approach are documented. This is an
+open-knowledge project.
 
 ## Structure
-```
+```bash
 .
 ├── docs
 │   └── java
