@@ -1,14 +1,14 @@
 package michaelarn0ld.ds_algorithms.arrays;
 
 /**
- * This class implements an ordered array
+ * This class implements an unordered array
  * */
-public class OrderedArray implements Array {
+public class UnorderedArray implements Array {
 
     private final int[] a;
     private int nElems;
 
-    public OrderedArray(int max) {
+    public UnorderedArray(int max) {
         a = new int[max];
         nElems = 0;
     }
@@ -18,51 +18,29 @@ public class OrderedArray implements Array {
     }
 
     /**
-     * Implements binary search to find index of an element in an ordered array
+     * Implements linear search to find index of an element in an unordered array
      *
      * @param value - value that we are looking for in the array
      * @return - the index of value if it exists, otherwise -1 if not found
      * */
     @Override
     public int find(int value) {
-
-        int lowerBound = 0;
-        int upperBound = nElems - 1;
-        int curIdx;
-
-        while(true) {
-            curIdx = (lowerBound + upperBound) / 2;
-            if(a[curIdx] == value){
-                return curIdx; 
-            } 
-            if (lowerBound > upperBound) {
-                return -1;
-            }
-            if(value > a[curIdx]) {
-                lowerBound = curIdx + 1;
-            } else {
-                upperBound = curIdx - 1;
+        for (int i = 0; i < nElems; i++) {
+            if (a[i] == value) {
+                return i;
             }
         }
+        return -1;
     }
 
     /**
-     * Uses linear search to find the insertion index, shifts all elements from
-     * this index rightward (inclusive) to the right by one, then inserts the
-     * value at the insertion index.
+     * Constant time insertion; insert new elements to the end of the array
      *
-     * @param value - value that we want to insert into the sorted array
+     * @param value - value that we want to insert into the unordered array
      * */
     @Override
     public void insert(int value) {
-        int i;
-        for (i = 0; i < nElems; i++) {
-            if (a[i] > value) break;
-        }
-        for (int j = nElems; j > i; j--) {
-            a[j] = a[j - 1];
-        }
-        a[i] = value;
+        a[nElems] = value;
         nElems++;
     }
 
