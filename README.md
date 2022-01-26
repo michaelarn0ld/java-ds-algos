@@ -5,7 +5,7 @@ the costs and benefits of each approach are documented. This is an
 open-knowledge project.
 
 ## Structure
-```bash
+```pre
 .
 ├── docs
 │   └── java
@@ -40,7 +40,7 @@ open-knowledge project.
         │                 
         └── resources
 ```
-The structure for this project is straight-forward; topics are separated into
+The structure for this project is straight forward; topics are separated into
 their own packages. For example, `michaelarn0ld.ds_algorithms.arrays` contains
 source files related to arrays. Furthermore, documentation and notes on topics
 can be found in their respective paths from `/docs`. In the example above,
