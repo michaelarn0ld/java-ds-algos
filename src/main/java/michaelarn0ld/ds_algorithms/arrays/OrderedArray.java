@@ -30,20 +30,18 @@ public class OrderedArray implements Array {
         int upperBound = nElems - 1;
         int curIdx;
 
-        while(true) {
+        while(lowerBound <= upperBound) {
             curIdx = (lowerBound + upperBound) / 2;
             if(a[curIdx] == value){
                 return curIdx; 
             } 
-            if (lowerBound > upperBound) {
-                return -1;
-            }
             if(value > a[curIdx]) {
                 lowerBound = curIdx + 1;
             } else {
                 upperBound = curIdx - 1;
             }
         }
+        return -1;
     }
 
     /**
