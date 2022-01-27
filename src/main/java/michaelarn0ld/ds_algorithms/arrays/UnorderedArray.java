@@ -5,16 +5,34 @@ package michaelarn0ld.ds_algorithms.arrays;
  * */
 public class UnorderedArray implements Array {
 
-    private final int[] a;
+    private final int[] array;
     private int nElems;
 
     public UnorderedArray(int max) {
-        a = new int[max];
+        array = new int[max];
         nElems = 0;
     }
 
+    /**
+     * Returns the size of the ordered array; does not include empty elements
+     * in the extra space allocated at construction
+     * */
     public int size() {
         return nElems;
+    }
+
+    /**
+     * Returns the element at the specified index
+     *
+     * @param i - index of element
+     * @return - value of the element, if it exists
+     */
+    @Override
+    public Integer get(int i) {
+        if (i < 0 || i > nElems - 1) {
+            return null;
+        }
+        return array[i];
     }
 
     /**
@@ -26,7 +44,7 @@ public class UnorderedArray implements Array {
     @Override
     public int find(int value) {
         for (int i = 0; i < nElems; i++) {
-            if (a[i] == value) {
+            if (array[i] == value) {
                 return i;
             }
         }
@@ -40,7 +58,7 @@ public class UnorderedArray implements Array {
      * */
     @Override
     public void insert(int value) {
-        a[nElems] = value;
+        array[nElems] = value;
         nElems++;
     }
 
@@ -56,12 +74,20 @@ public class UnorderedArray implements Array {
         int i = find(value);
         if (i != -1) {
             for (int j = i; j < nElems; j++) {
-                a[j] = a[j + 1];
+                array[j] = array[j + 1];
             }
             nElems--;
             return true;
         }
         return false;
+    }
+
+    /**
+     * Will implemented unordered array merge at a later time.
+     * */
+    @Override
+    public Array merge(Array mergeArray) {
+        return null;
     }
 
     /**
@@ -71,7 +97,7 @@ public class UnorderedArray implements Array {
     public void display() {
         System.out.print("[ ");
         for (int i = 0; i < nElems; i++) {
-            System.out.print(a[i] + " ");
+            System.out.print(array[i] + " ");
         }
         System.out.print("]\n");
     }
