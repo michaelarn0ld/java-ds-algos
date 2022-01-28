@@ -35,7 +35,8 @@ public class SelectionSortArray implements SimpleSortingArray {
 
     /**
      * Implements Selection Sort; the minimum element is selected and a swap 
-     * occurs only once during each pass.
+     * occurs only once during each pass; elements to the left of i are fully
+     * sorted.
      * */
     @Override
     public void sort(){

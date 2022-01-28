@@ -1,11 +1,11 @@
 package michaelarn0ld.ds_algorithms.simple_sorting;
 
-public class BubbleSortArray implements SimpleSortingArray {
+public class EvenOddSortArray implements SimpleSortingArray {
 
     private int[] array;
     private int nElems;
 
-    public BubbleSortArray(int max) {
+    public EvenOddSortArray(int max) {
         array = new int[max];
         nElems = 0;
     }
@@ -34,17 +34,25 @@ public class BubbleSortArray implements SimpleSortingArray {
     }
 
     /**
-     * Implements Bubble Sort; "bigger" elements are "bubbled" to the end and
-     * elements to the right of index i are fully sorted
+     * Implements Even Odd Sort.
      * */
     @Override
     public void sort(){
-        for (int i = nElems - 1; i > 0; i--) {
-            for (int j = 0; j < i; j++) {
+        for (int i = 0; i < nElems; i++) {
+            // even index pass
+            for (int j = 0; j < nElems - 1; j += 2) {
                 if (array[j] > array[j + 1]) {
                     int tmp = array[j];
                     array[j] = array[j + 1];
                     array[j + 1] = tmp;
+                }
+            }
+            // odd index pass
+            for (int k = 1; k < nElems - 1; k += 2) {
+                if (array[k] > array[k + 1]) {
+                    int tmp = array[k];
+                    array[k] = array[k + 1];
+                    array[k + 1] = tmp;
                 }
             }
         }
