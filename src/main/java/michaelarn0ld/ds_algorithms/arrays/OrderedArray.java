@@ -1,9 +1,6 @@
 package michaelarn0ld.ds_algorithms.arrays;
 
-/**
- * This class implements an ordered array
- * */
-public class OrderedArray implements Array {
+public class OrderedArray implements SimpleArray {
 
     private final int[] array;
     private int nElems;
@@ -120,21 +117,21 @@ public class OrderedArray implements Array {
     /**
      * Merges this array another ordered array into a new ordered array.
      *
-     * @param mergeArray - ordered array to be merged
+     * @param mergeSimpleArray - ordered array to be merged
      * @return - a new ordered destination array
      * */
     @Override
-    public Array merge(Array mergeArray) {
+    public SimpleArray merge(SimpleArray mergeSimpleArray) {
 
-        OrderedArray arr = new OrderedArray((size() + mergeArray.size()) * 2);
+        OrderedArray arr = new OrderedArray((size() + mergeSimpleArray.size()) * 2);
         int i = 0, j = 0;
 
-        while(i < size() && j < mergeArray.size()) {
-            if (get(i) < mergeArray.get(j)) {
+        while(i < size() && j < mergeSimpleArray.size()) {
+            if (get(i) < mergeSimpleArray.get(j)) {
                 arr.insert(get(i));
                 i++;
             } else {
-                arr.insert(mergeArray.get(j));
+                arr.insert(mergeSimpleArray.get(j));
                 j++;
             }
         }
@@ -144,8 +141,8 @@ public class OrderedArray implements Array {
             i++;
         }
 
-        while (j < mergeArray.size()) {
-            arr.insert(mergeArray.get(j));
+        while (j < mergeSimpleArray.size()) {
+            arr.insert(mergeSimpleArray.get(j));
             j++;
         }
 

@@ -1,6 +1,6 @@
 package michaelarn0ld.ds_algorithms.arrays;
 
-public interface Array {
+public interface SimpleArray {
 
     int size();
 
@@ -14,5 +14,5 @@ public interface Array {
 
     void display();
 
-    Array merge(Array mergeArray);
+    SimpleArray merge(SimpleArray mergeSimpleArray);
 }

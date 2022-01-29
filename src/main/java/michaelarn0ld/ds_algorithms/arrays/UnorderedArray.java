@@ -1,9 +1,6 @@
 package michaelarn0ld.ds_algorithms.arrays;
 
-/**
- * This class implements an unordered array
- * */
-public class UnorderedArray implements Array {
+public class UnorderedArray implements SimpleArray {
 
     private final int[] array;
     private int nElems;
@@ -86,7 +83,7 @@ public class UnorderedArray implements Array {
      * Will implemented unordered array merge at a later time.
      * */
     @Override
-    public Array merge(Array mergeArray) {
+    public SimpleArray merge(SimpleArray mergeSimpleArray) {
         return null;
     }
 
