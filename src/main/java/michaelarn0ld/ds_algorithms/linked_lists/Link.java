@@ -32,7 +32,7 @@ public class Link<T> {
      * Displays the contents of the Link
      * */
     public void display() {
-        System.out.printf("{ %s }\n", data);
+        System.out.printf("%s --> ", data);
     }
 
 }
