@@ -3,7 +3,7 @@ package michaelarn0ld.ds_algorithms.linked_lists;
 /**
  * Simplest version of a linked list, links only go in a single direction
  */
-public class SimpleLinkedList {
+public class SimpleLinkedList<T> {
     private Link head;
 
     /**
@@ -18,9 +18,10 @@ public class SimpleLinkedList {
     /**
      * Inserts a link at the head of the linked list
      *
-     * @param link - link to be inserted at the head
+     * @param value - link to be inserted at the head
      */
-    public void insertHead(Link link) {
+    public void insertHead(T value) {
+        Link<T> link = new Link<>(value);
         link.setNext(head);
         head = link;
     }

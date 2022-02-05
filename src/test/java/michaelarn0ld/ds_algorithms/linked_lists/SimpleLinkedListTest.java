@@ -8,43 +8,29 @@ class SimpleLinkedListTest {
 
     @Test
     void shouldPrintList() {
-        Link<Integer> head = new Link<>(0);
-        Link<Integer> nodeOne = new Link<>(1);
-        Link<Integer> nodeTwo = new Link<>(2);
-        Link<Integer> nodeThree = new Link<>(3);
-        Link<Integer> nodeFour = new Link<>(4);
-
-        SimpleLinkedList list = new SimpleLinkedList();
-        list.insertHead(nodeFour);
-        list.insertHead(nodeThree);
-        list.insertHead(nodeTwo);
-        list.insertHead(nodeOne);
-        list.insertHead(head);
+        SimpleLinkedList<Integer> list = new SimpleLinkedList();
+        list.insertHead(5);
+        list.insertHead(4);
+        list.insertHead(3);
+        list.insertHead(2);
+        list.insertHead(1);
         list.display();
     }
 
     @Test
     void shouldDelete() {
-        Link<Integer> head = new Link<>(0);
-        Link<Integer> nodeOne = new Link<>(1);
-        Link<Integer> nodeTwo = new Link<>(2);
-        Link<Integer> nodeThree = new Link<>(3);
-        Link<Integer> nodeFour = new Link<>(4);
 
-        SimpleLinkedList list = new SimpleLinkedList();
-        list.insertHead(nodeFour);
-        list.insertHead(nodeThree);
-        list.insertHead(nodeTwo);
-        list.insertHead(nodeOne);
-        list.insertHead(head);
+        SimpleLinkedList<Integer> list = new SimpleLinkedList();
+        list.insertHead(0);
+        list.insertHead(1);
+        list.insertHead(2);
+        list.insertHead(3);
+        list.insertHead(4);
         list.display();
 
-        list.delete(3);
-        Link deleted = list.delete(0);
+        Link delete = list.delete(3);
         list.display();
-
-        assertEquals(deleted.getData(), 0);
-
+        assertEquals(delete.getData(), 1);
     }
 
 }
