@@ -20,7 +20,7 @@ class SimpleLinkedListTest {
     @Test
     void shouldDelete() {
 
-        SimpleLinkedList<Integer> list = new SimpleLinkedList();
+        SimpleLinkedList<Integer> list = new SimpleLinkedList<>();
         list.insertHead(0);
         list.insertHead(1);
         list.insertHead(2);
@@ -28,7 +28,7 @@ class SimpleLinkedListTest {
         list.insertHead(4);
         list.display();
 
-        Link delete = list.delete(3);
+        Link<Integer> delete = list.delete(3);
         list.display();
         assertEquals(delete.getData(), 1);
     }

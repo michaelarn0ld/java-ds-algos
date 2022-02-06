@@ -3,8 +3,8 @@ package michaelarn0ld.ds_algorithms.linked_lists;
 import java.time.chrono.IsoChronology;
 
 public class DoubleEndedLinkedList<T> {
-    private Link head;
-    private Link tail;
+    private Link<T> head;
+    private Link<T> tail;
 
     /**
      * Checks if the list is empty
@@ -48,11 +48,11 @@ public class DoubleEndedLinkedList<T> {
      *
      * @return - the head that we just deleted
      */
-    public Link deleteHead() {
+    public Link<T> deleteHead() {
         if (isEmpty()) {
             return null;
         }
-        Link tmp = head;
+        Link<T> tmp = head;
         head = head.getNext();
         return tmp;
     }
@@ -62,7 +62,7 @@ public class DoubleEndedLinkedList<T> {
      */
     public void display() {
         System.out.print("List (head --> tail): ");
-        Link current = head;
+        Link<T> current = head;
         while (current != null) {
             current.display();
             current = current.getNext();

@@ -4,7 +4,7 @@ package michaelarn0ld.ds_algorithms.linked_lists;
  * Simplest version of a linked list, links only go in a single direction
  */
 public class SimpleLinkedList<T> {
-    private Link head;
+    private Link<T> head;
 
     /**
      * Checks if the list is empty
@@ -31,11 +31,11 @@ public class SimpleLinkedList<T> {
      *
      * @return - the head that we just deleted
      */
-    public Link deleteHead() {
+    public Link<T> deleteHead() {
         if (isEmpty()) {
             return null;
         }
-        Link tmp = head;
+        Link<T> tmp = head;
         head = head.getNext();
         return tmp;
     }
@@ -62,7 +62,7 @@ public class SimpleLinkedList<T> {
      * @param i - "index" of the linked list that we want to delete
      * @return - the element we deleted, otherwise deletion failed and return null
      */
-    public Link delete(int i) {
+    public Link<T> delete(int i) {
         int j = 0;
         if (isEmpty()) {
             return null; // cannot delete from an empty list
@@ -70,7 +70,7 @@ public class SimpleLinkedList<T> {
         if (i == 0) {
             return deleteHead();
         }
-        Link previous = head, current = head;
+        Link<T> previous = head, current = head;
         while(j < i && current != null) {
             previous = current;
             current = current.getNext();

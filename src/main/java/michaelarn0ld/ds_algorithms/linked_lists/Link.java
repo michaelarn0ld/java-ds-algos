@@ -6,7 +6,7 @@ package michaelarn0ld.ds_algorithms.linked_lists;
 public class Link<T> {
 
     private T data;
-    private Link next;
+    private Link<T> next;
 
     public Link(T data) {
         this.data = data;
@@ -20,11 +20,11 @@ public class Link<T> {
         this.data = data;
     }
 
-    public Link getNext() {
+    public Link<T> getNext() {
         return next;
     }
 
-    public void setNext(Link next) {
+    public void setNext(Link<T> next) {
         this.next = next;
     }
 
